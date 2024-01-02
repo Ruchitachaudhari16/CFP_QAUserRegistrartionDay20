@@ -28,4 +28,12 @@ public class UserValidator {
         Pattern pattern=Pattern.compile(EmailPattern);
         return  pattern.matcher(email).matches();
     }
+    /* UC4:-As a User need to follow pre-defined
+Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number*/
+    private  static  final String MobileNoPattern="^[+]?[0-9]{2}[ ][0-9]{10}$";
+    public boolean validateMobileNo(String mobileno)
+    {
+        Pattern pattern=Pattern.compile(MobileNoPattern);
+        return pattern.matcher(mobileno).matches();
+    }
 }

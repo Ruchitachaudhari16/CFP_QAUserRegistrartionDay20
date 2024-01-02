@@ -51,4 +51,20 @@ assertEquals(false, result);
         boolean result=userValidator.validateEmail("abc.xyzbl.co.in");
         assertEquals(false,result);
     }
+    //Test case for mobileno
+    @Test
+    public void givenmobileno_WhenValid_shouldReturnTrue()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validateMobileNo("91 9234567890");
+        assertEquals(true,result);
+    }
+    @Test
+    public void givenmobileno_WhenInValid_shouldReturnfalse()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validateMobileNo("9109234567890");
+        assertEquals(false,result);
+    }
+
 }
