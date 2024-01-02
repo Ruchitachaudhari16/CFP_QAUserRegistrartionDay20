@@ -110,5 +110,18 @@ assertEquals(false, result);
         boolean result = userValidator.validPass("Ruchita");
         assertEquals(false, result);
     }
+    //Test for atleast one special character
+    @Test
+    public void givenpassw_WhenValid_shouldReturntrue() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator. validPassw("Ruchi@23");
+        assertEquals(true, result);
+    }
+    @Test
+    public void givenpassw_WhenInValid_shouldReturnfalse() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator. validPassw("ruchi@23");
+        assertEquals(false, result);
+    }
 
 }
