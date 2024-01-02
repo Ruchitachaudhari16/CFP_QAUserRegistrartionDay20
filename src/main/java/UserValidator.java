@@ -36,4 +36,12 @@ Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit n
         Pattern pattern=Pattern.compile(MobileNoPattern);
         return pattern.matcher(mobileno).matches();
     }
+    /*UC5:- As a User need to follow pre-defined
+Password rules.Rule1– minimum 8Characters - NOTE – All rules must be passed*/
+    private  static  final String PasswordPattern="^[0-9A-Za-z@#$%&!]{8,}$";
+    public boolean validatePassword(String password)
+    {
+        Pattern pattern=Pattern.compile(PasswordPattern);
+        return pattern.matcher(password).matches();
+    }
 }

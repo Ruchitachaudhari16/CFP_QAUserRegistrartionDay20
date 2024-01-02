@@ -66,5 +66,19 @@ assertEquals(false, result);
         boolean result=userValidator.validateMobileNo("9109234567890");
         assertEquals(false,result);
     }
-
+//UC5:- Rule1 Password Testcase
+    @Test
+    public void givenpassword_WhenValid_shouldReturntrue()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validatePassword("Ruchita123");
+        assertEquals(true,result);
+    }
+    @Test
+    public void givenpassword_WhenInvalid_shouldReturnfalse()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validatePassword("uchita");
+        assertEquals(false,result);
+    }
 }
