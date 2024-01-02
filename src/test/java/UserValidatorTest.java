@@ -35,4 +35,20 @@ assertEquals(false, result);
         boolean result=userValidator.validateLastName("Ka");
         assertEquals(false,result);
     }
+    //Test case for email pattern
+    @Test
+    public void givenemail_whenProper_shouldReturnTrue()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validateEmail("abc.xyz@bl.co.in");
+        assertEquals(true,result);
+    }
+
+   @Test
+   public void givenemail_whenInvalid_shouldReturnFalse() //invalid email return true.
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validateEmail("abc.xyzbl.co.in");
+        assertEquals(false,result);
+    }
 }
