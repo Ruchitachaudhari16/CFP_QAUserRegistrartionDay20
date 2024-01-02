@@ -96,5 +96,19 @@ assertEquals(false, result);
         boolean result=userValidator.validatePass("uchita13");
         assertEquals(false,result);
     }
+//Test for atleast one numeric value
+
+    @Test
+    public void givenpas_WhenValid_shouldReturntrue() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validPass("Ruchita1");
+        assertEquals(true, result);
+    }
+    @Test
+    public void givenpas_WhenInValid_shouldReturnfalse() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validPass("Ruchita");
+        assertEquals(false, result);
+    }
 
 }

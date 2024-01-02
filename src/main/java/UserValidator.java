@@ -51,4 +51,11 @@ Password rules.Rule1– minimum 8Characters - NOTE – All rules must be passed*
         Pattern pattern=Pattern.compile(PasswordPat);
         return pattern.matcher(passwo).matches();
     }
+    /* UC7:-Rule3– Should have at least 1 numeric number inthe password - NOTE – All rules must be passed*/
+    private  static  final String PassPattern="^(?=.*?[A-Z])(?=.*?[0-9])[0-9A-Za-z@#$%&!]{8,}$";
+    public boolean validPass(String pass)
+    {
+        Pattern pattern=Pattern.compile(PassPattern);
+        return pattern.matcher(pass).matches();
+    }
 }
