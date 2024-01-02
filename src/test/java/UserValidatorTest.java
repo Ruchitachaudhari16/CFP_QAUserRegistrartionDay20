@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserValidatorTest {
+    //Valid first name then it returns true
 
     @Test
     void givenfirstName_whenProper_shouldReturnTrue() {
@@ -13,10 +14,25 @@ class UserValidatorTest {
         Assert.assertEquals(true,result);
     }
 @Test
-    public void givenfirstName_whenShort_shouldReturnFalse()
+    public void givenfirstName_whenShort_shouldReturnFalse() //Invalid firstname then it will return true.
 {
     UserValidator  userValidator=new UserValidator();
 boolean result=userValidator.validateFirstName("er");
 assertEquals(false, result);
 }
+//Test case for valid lastname
+    @Test
+    public  void  givenlastName_whenProper_shouldReturnTrue()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validateLastName("Kale");
+        assertEquals(true,result);
+    }
+    @Test
+    public  void  givenlastName_whenShort_shouldReturnfalse()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validateLastName("Ka");
+        assertEquals(false,result);
+    }
 }
