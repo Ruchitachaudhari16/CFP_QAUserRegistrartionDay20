@@ -44,4 +44,11 @@ Password rules.Rule1– minimum 8Characters - NOTE – All rules must be passed*
         Pattern pattern=Pattern.compile(PasswordPattern);
         return pattern.matcher(password).matches();
     }
+    /* UC6:-Rule2– Should have at least 1 Upper Case - NOTE – All rules must be passed*/
+    private  static  final String PasswordPat="^[A-Z]{1}[0-9A-Za-z@#$%&!]{8,}$";
+    public boolean validatePass(String passwo)
+    {
+        Pattern pattern=Pattern.compile(PasswordPat);
+        return pattern.matcher(passwo).matches();
+    }
 }

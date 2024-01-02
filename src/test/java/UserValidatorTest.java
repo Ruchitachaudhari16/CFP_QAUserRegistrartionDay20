@@ -81,4 +81,20 @@ assertEquals(false, result);
         boolean result=userValidator.validatePassword("uchita");
         assertEquals(false,result);
     }
+    //Test case for Rule2 Password
+    @Test
+    public void givenpass_WhenValid_shouldReturntrue()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validatePass("Ruchita13");
+        assertEquals(true,result);
+    }
+    @Test
+    public void givenpass_WhenInValid_shouldReturnfalse()
+    {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validatePass("uchita13");
+        assertEquals(false,result);
+    }
+
 }
