@@ -1,9 +1,11 @@
+import org.junit.Test;
+
 import java.util.regex.Pattern;
 
 public class UserValidator {
     /* UC1:-As a User need to enter a valid FirstName
 - First name starts with Cap and has minimum 3 characters*/
-    private static final String FIRSTNAMEPATTERN = "^[A-Z]{1}[a-z]{3,}?";
+    private static final String FIRSTNAMEPATTERN = "^[A-Z]{1}[a-z]{3,}?$";
 
     public boolean validateFirstName(String fname) {
         Pattern pattern = Pattern.compile(FIRSTNAMEPATTERN);
@@ -12,7 +14,7 @@ public class UserValidator {
 
     /* UC2-As a User need to enter a valid LastName
 - Last name starts with Cap and has minimum 3 characters*/
-    private static final String LASTNAMEPATTERN = "^[A-Z]{1}[a-z]{3,}?";
+    private static final String LASTNAMEPATTERN = "^[A-Z]{1}[a-z]{3,}?$";
 
     public boolean validateLastName(String lname) {
         Pattern pattern = Pattern.compile(LASTNAMEPATTERN);
@@ -77,6 +79,14 @@ Password rules.Rule1– minimum 8Characters - NOTE – All rules must be passed*
     public boolean validemail(String mail)
     {
         Pattern pattern = Pattern.compile(email);
+        return pattern.matcher(mail).matches();
+    }
+    //Validate email using parameterised method
+    static final String valemail = "^[0-9A-Za-z]+[.+_-]{0,1}[0-9A-Za-z]+[@][A-Za-z]+[.][a-z]{2,3}([.][a-z]{2,3}){0,1}$";
+
+    public boolean validetemail(String mail)
+    {
+        Pattern pattern = Pattern.compile(valemail);
         return pattern.matcher(mail).matches();
     }
 }
