@@ -79,4 +79,13 @@ Password rules.Rule1– minimum 8Characters - NOTE – All rules must be passed*
         Pattern pattern = Pattern.compile(email);
         return pattern.matcher(mail).matches();
     }
+    /*UC10 Parameterised test*/
+
+    static final String prametreemail = "^[0-9A-Za-z]+[.+_-]{0,1}[0-9A-Za-z]+[@][A-Za-z]+[.][a-z]{2,3}([.][a-z]{2,3}){0,1}$";
+
+    public boolean valideatemail(String mail)
+    {
+        Pattern pattern = Pattern.compile(email);
+        return pattern.matcher(mail).matches();
+    }
 }

@@ -136,4 +136,11 @@ public void givenemail_WhenValid_shouldReturntrue() {
         boolean result = userValidator.validemail("ruch@coin");
         assertEquals(false, result);
     }
+
+    //Parameterised
+    @Test
+    public void given_parameterised_email_WhenInValid_shouldReturntrue() {
+        //ValidEmailTest ve = new ValidEmailTest();
+
+    }
 }
